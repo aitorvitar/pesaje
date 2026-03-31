@@ -23,16 +23,13 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
+        url: '/favicon.ico',
+        sizes: '32x32',
       },
       {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/logo.png',
+        type: 'image/png',
+        sizes: '512x512',
       },
     ],
     apple: '/apple-icon.png',
@@ -45,8 +42,8 @@ export const viewport: Viewport = {
   maximumScale: 5,
   userScalable: true,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+    { media: '(prefers-color-scheme: light)', color: '#14b8a6' },
+    { media: '(prefers-color-scheme: dark)', color: '#0d9488' },
   ],
 }
 

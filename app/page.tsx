@@ -72,9 +72,16 @@ export default function Home() {
       {/* Header */}
       <div className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Control de Peso</h1>
-            <p className="text-sm text-muted-foreground">Monitorea tu evolución</p>
+          <div className="flex items-center gap-3">
+            <img 
+              src="/logo.png" 
+              alt="Logo Control de Peso" 
+              className="w-10 h-10 md:w-12 md:h-12 rounded-lg"
+            />
+            <div>
+              <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Control de Peso</h1>
+              <p className="text-sm text-muted-foreground">Monitorea tu evolución</p>
+            </div>
           </div>
           <Button
             onClick={() => setActiveTab('entrada')}
