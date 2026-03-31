@@ -1,26 +1,19 @@
 import { CompositionType } from './types';
 
 export const getCompositionType = (bmi: number, bodyFat: number, muscle: number): CompositionType => {
-  // Basado en BMI y composición corporal
+  // Basado primariamente en BMI - este es el clasificador principal
   if (bmi < 18.5) {
-    // Bajo peso
-    if (muscle > 35) return 'athletic';
-    if (muscle > 32) return 'fit';
-    return 'normal';
+    return 'normal'; // Bajo peso (delgado)
   } else if (bmi < 25) {
     // Peso normal
-    if (muscle > 35) return 'muscular';
-    if (muscle > 32) return 'athletic';
-    if (bodyFat < 20) return 'fit';
-    return 'normal';
+    if (muscle > 35 && bodyFat < 18) return 'muscular';
+    if (bodyFat < 20) return 'athletic';
+    return 'fit';
   } else if (bmi < 30) {
     // Sobrepeso
-    if (muscle > 35) return 'muscular';
-    if (muscle > 30) return 'fit';
     return 'overweight';
   } else {
-    // Obeso
-    if (muscle > 35) return 'muscular';
+    // Obeso (BMI >= 30)
     return 'obese';
   }
 };
@@ -81,6 +74,19 @@ export const calculateTrend = (entries: any[], days: number = 7): number => {
   const newestWeight = recentEntries[0]?.weight || 0;
   
   return newestWeight - oldestWeight;
+};
+
+export const getBodyImage = (bmi: number): string => {
+  // Mapea BMI a imagen de cuerpo realista
+  if (bmi < 18.5) {
+    return '/body-underweight.png';
+  } else if (bmi < 25) {
+    return '/body-normal.png';
+  } else if (bmi < 30) {
+    return '/body-overweight.png';
+  } else {
+    return '/body-obese.png';
+  }
 };
 
 export const getStats = (entries: any[]) => {
