@@ -131,7 +131,7 @@ export default function Home() {
               <Card className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="flex-1">
-                    <BodyAvatar type={compositionType} size="md" />
+                    <BodyAvatar type={compositionType} bmi={entries[0].bmi} size="md" />
                   </div>
                   <div className="md:col-span-2 flex flex-col justify-center">
                     <h3 className="text-lg font-semibold mb-2">Tu Estado Actual</h3>
